@@ -2,5 +2,5 @@ plugin:
     name: 'crydesign.socializer::lang.plugin.name'
     description: 'crydesign.socializer::lang.plugin.description'
     author: CRYDEsigN
-    icon: oc-icon-book
-    homepage: ''
+    icon: oc-icon-share-alt
+    homepage: 'https://github.com/Cryden/oc-socializer'

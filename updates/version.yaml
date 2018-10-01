@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table crydesign_socializer_crosspost'
+    - builder_table_create_crydesign_socializer_crosspost.php
+1.0.3:
+    - 'Updated table crydesign_socializer_crosspost'
+    - builder_table_update_crydesign_socializer_crosspost.php
