@@ -28,7 +28,7 @@ class Plugin extends PluginBase
         'description' => 'crydesign.socializer::lang.plugin.description',
         'category'    => SettingsManager::CATEGORY_CMS,
         'icon'        => 'icon-share-alt',
-        'url'         => Backend::url('crydesign/socializers/locations'),
+        'class'       => 'CRYDEsigN\Socializer\Models\Settings',
         'order'       => 500,
         'keywords'    => 'social vk socializer'
       ]
