@@ -1,0 +1,4 @@
+title: Crosspostings
+modelClass: Crydesign\Socializer\Models\Crosspost
+toolbar:
+    buttons: reorder_toolbar

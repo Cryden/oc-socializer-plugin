@@ -4,8 +4,27 @@
 
 fields:
   socializer_details_section:
-    label: 'crydesign.socializer::lang.plugin.name'
+    label: crydesign.socializer::lang.plugin.name
     type: section
-    comment: 'crydesign.socializer::lang.plugin.option_description'
+    comment: crydesign.socializer::lang.plugin.option_description
 
+tabs:
+  fields:
+    _vk_logo:
+      type: partial
+      path: $/crydesign/socializer/partials/_vk.htm
+      tab: crydesign.socializer::lang.plugin.options_tab
+      span: storm
+      cssClass: col-md-1
+    _vk_check:
+      label: Vkontakte
+      tab: crydesign.socializer::lang.plugin.options_tab
+      type: checkbox
+      default: true
+      span: storm
+      cssClass: col-md-1
+    vk_api:
+      label: crydesign.socializer::lang.plugin.vk_api
+      tab: crydesign.socializer::lang.plugin.options_tab
+      span: full
 

@@ -1,0 +1,12 @@
+list: $/crydesign/socializer/models/crosspost/columns.yaml
+modelClass: Crydesign\Socializer\Models\Crosspost
+title: Crosspostings
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'crydesign/socializer/crosspostings/update/:id'

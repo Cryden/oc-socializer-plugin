@@ -34,4 +34,11 @@ class Plugin extends PluginBase
       ]
     ];
   }
+
+  public function registerFormWidgets()
+  {
+    return [
+      'Crydesign\Socializer\FormWidgets\CrossPosting' => 'crossposting',
+  ];
+  }
 }

@@ -1,0 +1,8 @@
+fields:
+  vk_post_id:
+    label: Text
+    span: auto
+    type: text
+  _test:
+    type: crossposting
+    

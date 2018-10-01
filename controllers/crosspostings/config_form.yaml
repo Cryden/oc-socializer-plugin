@@ -1,0 +1,10 @@
+name: Crosspostings
+form: $/crydesign/socializer/models/crosspost/fields.yaml
+modelClass: Crydesign\Socializer\Models\Crosspost
+defaultRedirect: crydesign/socializer/crosspostings
+create:
+    redirect: 'crydesign/socializer/crosspostings/update/:id'
+    redirectClose: crydesign/socializer/crosspostings
+update:
+    redirect: crydesign/socializer/crosspostings
+    redirectClose: crydesign/socializer/crosspostings
