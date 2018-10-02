@@ -16,7 +16,7 @@ class CrossPosting extends FormWidgetBase
 
   public function render() 
   {
-    return $this->makePartial('crossposting');
+    return $this->makePartial('control-crossposting');
   }
 }
 
