@@ -14,6 +14,7 @@ class CrossPosting extends FormWidgetBase
     //echo get_class($this->model);
     //dd ($this->model);
     $this->vars['model'] = get_class($this->model);
+    $this->vars['postId'] = $this->model->attributes['id'];
     
     //print_r($this);
     return $this->makePartial('crossposting');
