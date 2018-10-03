@@ -3,7 +3,3 @@ fields:
         label: Text
         span: auto
         type: text
-    _test:
-        type: crossposting
-    _test2:
-        type: test

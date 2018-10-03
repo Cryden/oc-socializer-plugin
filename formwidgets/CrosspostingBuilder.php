@@ -3,11 +3,10 @@
 use RainLab\Builder\Widgets\DefaultControlDesignTimeProvider;
 use Backend\Classes\WidgetBase;
 
-class BuilderControlDesignTimeProvider extends DefaultControlDesignTimeProvider
+class CrosspostingBuilder extends DefaultControlDesignTimeProvider
 {
   protected $defaultControlsTypes = [
     'crossposting',
-    'test',
   ];
 
   public function renderControlBody($type, $properties, $formBuilder)

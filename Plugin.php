@@ -49,9 +49,30 @@ class Plugin extends PluginBase
   }
 
   public function boot()
-    {
-        Event::listen('pages.builder.registerControls', function($controlLibrary) {
+  {
+    Event::listen('pages.builder.registerControls', function($controlLibrary) {
 
+      function addTest($controlLibrary) {
+            $test_properties = [
+              'test' => [
+                  'title' => 'Test',
+                  'description' => 'Description',
+                  'type' => 'string',
+              ],
+            ];
+
+            $controlLibrary->registerControl(
+              'test',
+              'test title',
+              'test description',
+              'default',
+              'icon-pencil-square',
+              $controlLibrary->getStandardProperties(['stretch'], $test_properties),
+              'CRYDEsigN\Socializer\FormWidgets\TestBuilder'
+            );
+      }
+
+      function addCrossposting($controlLibrary) {
             $properties = [
                 'crossposting' => [
                     'title' => 'Socializer',
@@ -79,28 +100,13 @@ class Plugin extends PluginBase
                 'default',
                 'icon-pencil-square',
                 $controlLibrary->getStandardProperties(['stretch'], $properties),
-                'CRYDEsigN\Socializer\FormWidgets\BuilderControlDesignTimeProvider'
+                'CRYDEsigN\Socializer\FormWidgets\CrosspostingBuilder'
             );
+      }
 
+      addTest($controlLibrary);
+      addCrossposting($controlLibrary);
 
-
-          $test_properties = [
-              'test' => [
-                  'title' => 'Test',
-                  'description' => 'Description',
-                  'type' => 'string',
-              ],
-          ];
-
-          $controlLibrary->registerControl(
-              'test',
-              'test title',
-              'test description',
-              'default',
-              'icon-pencil-square',
-              $controlLibrary->getStandardProperties(['stretch'], $test_properties),
-              'CRYDEsigN\Socializer\FormWidgets\BuilderControlDesignTimeProvider'
-          );
-        });
-    }
+    });
+  }
 }
