@@ -17,12 +17,6 @@ class Plugin extends PluginBase
   {
   }
 
-  /**
-   * Registers settings for this plugin.
-   *
-   * @return array
-   */
-
   public function registerSettings()
   {
     return [
@@ -53,55 +47,55 @@ class Plugin extends PluginBase
     Event::listen('pages.builder.registerControls', function($controlLibrary) {
 
       function addTest($controlLibrary) {
-            $test_properties = [
-              'test' => [
-                  'title' => 'Test',
-                  'description' => 'Description',
-                  'type' => 'string',
-              ],
-            ];
+        $test_properties = [
+          'test' => [
+            'title' => 'Test',
+            'description' => 'Description',
+            'type' => 'string',
+          ],
+        ];
 
-            $controlLibrary->registerControl(
-              'test',
-              'test title',
-              'test description',
-              'default',
-              'icon-pencil-square',
-              $controlLibrary->getStandardProperties(['stretch'], $test_properties),
-              'CRYDEsigN\Socializer\FormWidgets\TestBuilder'
-            );
+        $controlLibrary->registerControl(
+          'test',
+          'test title',
+          'test description',
+          'default',
+          'icon-pencil-square',
+          $controlLibrary->getStandardProperties(['stretch'], $test_properties),
+          'CRYDEsigN\Socializer\FormWidgets\TestBuilder'
+        );
       }
 
       function addCrossposting($controlLibrary) {
-            $properties = [
-                'crossposting' => [
-                    'title' => 'Socializer',
-                    'description' => 'Description',
-                    'type' => 'string',
-                ],
-                'size' =>  [
-                    'title' => Lang::get('rainlab.builder::lang.form.property_attributes_size'),
-                    'type' => 'dropdown',
-                    'options' => [
-                        'tiny' => Lang::get('rainlab.builder::lang.form.property_attributes_size_tiny'),
-                        'small' => Lang::get('rainlab.builder::lang.form.property_attributes_size_small'),
-                        'large' => Lang::get('rainlab.builder::lang.form.property_attributes_size_large'),
-                        'huge' => Lang::get('rainlab.builder::lang.form.property_attributes_size_huge'),
-                        'giant' => Lang::get('rainlab.builder::lang.form.property_attributes_size_giant')
-                    ],
-                    'sortOrder' => 51
-                ]
-            ];
+        $properties = [
+          'crossposting' => [
+            'title' => 'Socializer',
+            'description' => 'Description',
+            'type' => 'string',
+          ],
+          'size' =>  [
+            'title' => Lang::get('rainlab.builder::lang.form.property_attributes_size'),
+            'type' => 'dropdown',
+            'options' => [
+              'tiny' => Lang::get('rainlab.builder::lang.form.property_attributes_size_tiny'),
+              'small' => Lang::get('rainlab.builder::lang.form.property_attributes_size_small'),
+              'large' => Lang::get('rainlab.builder::lang.form.property_attributes_size_large'),
+              'huge' => Lang::get('rainlab.builder::lang.form.property_attributes_size_huge'),
+              'giant' => Lang::get('rainlab.builder::lang.form.property_attributes_size_giant')
+            ],
+          'sortOrder' => 51
+          ]
+        ];
 
-            $controlLibrary->registerControl(
-                'crossposting',
-                'title',
-                'description',
-                'default',
-                'icon-pencil-square',
-                $controlLibrary->getStandardProperties(['stretch'], $properties),
-                'CRYDEsigN\Socializer\FormWidgets\CrosspostingBuilder'
-            );
+        $controlLibrary->registerControl(
+          'crossposting',
+          'title',
+          'description',
+          'default',
+          'icon-pencil-square',
+          $controlLibrary->getStandardProperties(['stretch'], $properties),
+          'CRYDEsigN\Socializer\FormWidgets\CrosspostingBuilder'
+        );
       }
 
       addTest($controlLibrary);
