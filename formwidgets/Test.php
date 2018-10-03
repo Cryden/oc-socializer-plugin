@@ -8,7 +8,7 @@ class CrossPosting extends FormWidgetBase
   /**
    * @var string A unique alias to identify this widget.
    */
-  protected $defaultAlias = 'crossposting';
+  protected $defaultAlias = 'test';
 
   // Настройки полей OpenGraph
   
@@ -16,7 +16,7 @@ class CrossPosting extends FormWidgetBase
 
   public function render() 
   {
-    return $this->makePartial('crossposting');
+    return $this->makePartial('test');
   }
 }
 

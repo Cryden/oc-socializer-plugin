@@ -5,8 +5,5 @@ fields:
         type: text
     _test:
         type: crossposting
-    crossposting1:
-        label: cross
-        span: auto
-        size: ''
-        type: crossposting
+    _test2:
+        type: test

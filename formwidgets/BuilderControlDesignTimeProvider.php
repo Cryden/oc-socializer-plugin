@@ -1,12 +1,13 @@
-<?php namespace Crydesign\Socializer\Builder;
+<?php namespace Crydesign\Socializer\FormWidgets;
 
 use RainLab\Builder\Widgets\DefaultControlDesignTimeProvider;
-
+use Backend\Classes\WidgetBase;
 
 class BuilderControlDesignTimeProvider extends DefaultControlDesignTimeProvider
 {
   protected $defaultControlsTypes = [
     'crossposting',
+    'test',
   ];
 
   public function renderControlBody($type, $properties, $formBuilder)
@@ -15,10 +16,18 @@ class BuilderControlDesignTimeProvider extends DefaultControlDesignTimeProvider
           return $this->renderUnknownControl($type, $properties);
       }
 
+     // return $this->getViewPaths();
+      foreach ($this->defaultControlsTypes as $value) {
+        WidgetBase::addViewPath(plugins_path()."/crydesign/socializer/formwidgets/".$value."/partials");
+      }
+      
+
+      //print_r($this->getViewPaths());
+
       return $this->makePartial($type, [
-          'properties'=>$properties,
-          'formBuilder' => $formBuilder
-      ]);
+           'properties'=>$properties,
+           'formBuilder' => $formBuilder
+       ]);
   }
 }
 

@@ -79,8 +79,28 @@ class Plugin extends PluginBase
                 'default',
                 'icon-pencil-square',
                 $controlLibrary->getStandardProperties(['stretch'], $properties),
-                'CRYDEsigN\Socializer\Builder\BuilderControlDesignTimeProvider'
+                'CRYDEsigN\Socializer\FormWidgets\BuilderControlDesignTimeProvider'
             );
+
+
+
+          $test_properties = [
+              'test' => [
+                  'title' => 'Test',
+                  'description' => 'Description',
+                  'type' => 'string',
+              ],
+          ];
+
+          $controlLibrary->registerControl(
+              'test',
+              'test title',
+              'test description',
+              'default',
+              'icon-pencil-square',
+              $controlLibrary->getStandardProperties(['stretch'], $test_properties),
+              'CRYDEsigN\Socializer\FormWidgets\BuilderControlDesignTimeProvider'
+          );
         });
     }
 }
