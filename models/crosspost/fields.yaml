@@ -3,3 +3,8 @@ fields:
         label: Text
         span: auto
         type: text
+    crossposting1:
+        label: Кросспостинг
+        size: ''
+        span: full
+        type: crossposting

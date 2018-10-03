@@ -15,9 +15,9 @@ class CrosspostingBuilder extends DefaultControlDesignTimeProvider
          return $this->renderUnknownControl($type, $properties);
      }
 
-     foreach ($this->defaultControlsTypes as $value) {
-      WidgetBase::addViewPath(plugins_path()."/crydesign/socializer/formwidgets/".$value."/partials");
-     }
+     //foreach ($this->defaultControlsTypes as $value) {
+     // WidgetBase::addViewPath(plugins_path()."/crydesign/socializer/formwidgets/".$value."/partials");
+    // }
 
      return $this->makePartial($type, 
       [

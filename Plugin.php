@@ -83,7 +83,8 @@ class Plugin extends PluginBase
               'huge' => Lang::get('rainlab.builder::lang.form.property_attributes_size_huge'),
               'giant' => Lang::get('rainlab.builder::lang.form.property_attributes_size_giant')
             ],
-          'sortOrder' => 51
+          'sortOrder' => 51,
+          'model' => null
           ]
         ];
 
