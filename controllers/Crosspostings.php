@@ -1,7 +1,6 @@
 <?php namespace Crydesign\Socializer\Controllers;
 
 use Backend\Classes\Controller;
-use BackendMenu;
 
 class Crosspostings extends Controller
 {

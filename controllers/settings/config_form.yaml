@@ -1,0 +1,15 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: Settings
+form: $/crydesign/socializer/models/settings/fields.yaml
+modelClass: Crydesign\Socializer\Models\Settings
+defaultRedirect: system/settings 
+
+create:
+    redirect: 'crydesign/socializer/settings/create'
+    redirectClose: system/settings 
+update:
+    redirect: crydesign/socializer/setting/updeate/:id
+    redirectClose: system/settings 

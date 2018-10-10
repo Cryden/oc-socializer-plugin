@@ -16,15 +16,27 @@ tabs:
       tab: crydesign.socializer::lang.plugin.options_tab
       span: storm
       cssClass: col-md-1
-    _vk_check:
+    vk_check:
       label: Vkontakte
       tab: crydesign.socializer::lang.plugin.options_tab
       type: checkbox
       default: true
       span: storm
       cssClass: col-md-1
-    vk_api:
-      label: crydesign.socializer::lang.plugin.vk_api
+    vk_client_id:
+      label: ID приложения
+      tab: crydesign.socializer::lang.plugin.options_tab
+      span: full
+    vk_client_secret:
+      label: Защищённый ключ
+      tab: crydesign.socializer::lang.plugin.options_tab
+      span: full
+    vk_access_token:
+      label: Access token
+      tab: crydesign.socializer::lang.plugin.options_tab
+      span: full
+    vk_group_id:
+      label: id группы для кросспостинга
       tab: crydesign.socializer::lang.plugin.options_tab
       span: full
 

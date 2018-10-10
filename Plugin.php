@@ -25,7 +25,8 @@ class Plugin extends PluginBase
         'description' => 'crydesign.socializer::lang.plugin.description',
         'category'    => SettingsManager::CATEGORY_CMS,
         'icon'        => 'icon-share-alt',
-        'class'       => 'CRYDEsigN\Socializer\Models\Settings',
+        // 'class'       => 'CRYDEsigN\Socializer\Models\Settings',
+        'url'         => Backend::url('crydesign/socializer/settings/index'),
         'order'       => 500,
         'keywords'    => 'social vk socializer'
       ]
@@ -72,19 +73,14 @@ class Plugin extends PluginBase
             'title' => 'Socializer',
             'description' => 'Description',
             'type' => 'string',
+            'group' => 'Socializer'
           ],
-          'size' =>  [
-            'title' => Lang::get('rainlab.builder::lang.form.property_attributes_size'),
+
+          'og_title' => [
+            'title' => 'og-title',
             'type' => 'dropdown',
-            'options' => [
-              'tiny' => Lang::get('rainlab.builder::lang.form.property_attributes_size_tiny'),
-              'small' => Lang::get('rainlab.builder::lang.form.property_attributes_size_small'),
-              'large' => Lang::get('rainlab.builder::lang.form.property_attributes_size_large'),
-              'huge' => Lang::get('rainlab.builder::lang.form.property_attributes_size_huge'),
-              'giant' => Lang::get('rainlab.builder::lang.form.property_attributes_size_giant')
-            ],
-          'sortOrder' => 51,
-          'model' => null
+            'fillFrom' => 'form-controls',
+            'group' => 'Socializer'
           ]
         ];
 

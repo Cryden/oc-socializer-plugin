@@ -1,10 +1,9 @@
 fields:
-    vk_post_id:
-        label: Text
+    post_id:
+        label: 'Post id'
         span: auto
         type: text
-    crossposting1:
-        label: Кросспостинг
-        size: ''
-        span: full
-        type: crossposting
+    post_type:
+        label: 'Post Type'
+        span: auto
+        type: text
