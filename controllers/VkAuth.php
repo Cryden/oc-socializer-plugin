@@ -3,6 +3,7 @@
 use Backend;
 use Backend\Classes\Controller;
 use Redirect;
+use Url;
 use VK\OAuth\VKOAuth;
 use \CRYDEsigN\Socializer\Models\Settings as Setting;
 
@@ -20,7 +21,7 @@ class VkAuth extends Controller
             $settings = Setting::instance();
             $client_id = $settings->vk_client_id;
             $client_secret = $settings->vk_client_sekret;
-            $redirect_uri = 'http://fw.octobercms.loc/vk_auth';
+            $redirect_uri = Url::to('/vk_auth');
             $code = $_GET['code'];
 
             $response = $oauth->getAccessToken($client_id, $client_secret, $redirect_uri, $code);

@@ -1,6 +1,7 @@
 <?php namespace Crydesign\Socializer\Controllers;
 
 use Backend\Classes\Controller;
+use Cms\Classes\Theme;
 
 class Crosspostings extends Controller
 {
@@ -18,4 +19,5 @@ class Crosspostings extends Controller
     {
         parent::__construct();
     }
+
 }

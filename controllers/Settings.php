@@ -11,6 +11,7 @@ use VK\OAuth\VKOAuthDisplay;
 use VK\OAuth\VKOAuthResponseType;
 use \CRYDEsigN\Socializer\Models\Settings as Setting;
 
+
 class Settings extends Controller
 {
 
@@ -53,6 +54,9 @@ class Settings extends Controller
         $config->model = Setting::find($id);
         $widget = $this->makeWidget('Backend\Widgets\Form', $config);
         $this->vars['widget'] = $widget;
+
+
+
     }
 
     public function onUpdate($id)

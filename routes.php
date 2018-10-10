@@ -1,5 +1,4 @@
 <?php
-use CRYDEsigN\Socializer\Models\Settings;
 use Illuminate\Http\Request;
 
 Route::get('/vk_auth', '\CRYDEsigN\Socializer\Controllers\VkAuth@index');

@@ -1,56 +1,70 @@
 <?php namespace Crydesign\Socializer\FormWidgets;
 
 use Backend\Classes\FormWidgetBase;
-use Db;
+use Url;
 use VK\Client\VKApiClient;
-use VK\OAuth\VKOAuth;
-use VK\OAuth\VKOAuthDisplay;
-use VK\OAuth\VKOAuthResponseType;
-use VK\OAuth\Scopes\VKOAuthGroupScope;
 use \CRYDEsigN\Socializer\Models\Settings as Setting;
 
 class CrossPosting extends FormWidgetBase
 {
 
-  protected $defaultAlias = 'crossposting';
+    protected $defaultAlias = 'crossposting';
 
-  public $og_title = null;
-  public $og_image = null;
+    public $page_preview = null;
 
-  public function init()
-  {
-      $this->fillFromConfig([
-          'og_title',
-      ]);
-  }
+    public function init()
+    {
+        $this->fillFromConfig([
+            'page_preview',
+        ]);
+    }
 
-  public function render() 
-  {
+    public function render()
+    {
+        return $this->makePartial('crossposting');
+    }
 
-    //echo get_class($this->model);
-    //dd ($this);
-    //$this->vars['model'] = $response;
-    
-    $this->vars['og_title'] = $this->model->attributes[$this->og_title];
-    
-    //print_r($this);
-    return $this->makePartial('crossposting');
-  }
+    public function getSaveValue($value)
+    {
+        function getLink($link, $self)
+        {
+            $link_params = explode('/', $link);
+            foreach ($link_params as $key => $link_part) {
+                // trace_log(mb_substr($link_part, 0, 1));
+                if (mb_substr($link_part, 0, 1) == ':') {
 
-  public function getSaveValue($value)
-  {
-    $vk = new VKApiClient(); 
-    $access_token = Setting::instance()->vk_access_token;
-    //dd($access_token);
-    $response = $vk->wall()->post($access_token, [
-        'owner_id' => -70589631,
-        'from_group' => 1,
-        'message' => 'Hello there test'
-      ]
-    );
+                    $params = mb_substr($link_part, 1);
+                    $get_params = $self->model->$params;
 
-    //Db::table('crydesign_socializer_crosspost')->insert(['post_type' => $browser_url, 'post_id' => $this->model->attributes['id']]);
-  }
+                    if (is_object($get_params)) {
+                        $link_params[$key] = $get_params->slug;
+                    } else {
+                        $link_params[$key] = $get_params;
+                    }
+
+                }
+            }
+            $link = implode("/", $link_params);
+            $link = Url::to($link);
+            return $link;
+        }
+
+        $vk = new VKApiClient();
+        $settings = Setting::instance();
+        $access_token = $settings->vk_access_token;
+        $owner_id = $settings->vk_group_id;
+        $link = $this->page_preview;
+        $link = getLink($link, $this);
+
+
+        $response = $vk->wall()->post($access_token, [
+            'owner_id' => -$owner_id,
+            'from_group' => 1,
+            //'message' => 'd',
+            'attachments' => $link
+          ]
+        );
+
+        //Db::table('crydesign_socializer_crosspost')->insert(['post_type' => $browser_url, 'post_id' => $this->model->attributes['id']]);
+    }
 }
-
-?>
