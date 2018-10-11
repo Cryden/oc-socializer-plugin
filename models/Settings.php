@@ -1,4 +1,4 @@
-<?php namespace CRYDEsigN\Socializer\Models;
+<?php namespace Crydesign\Socializer\Models;
 
 use Model;
 

@@ -3,7 +3,7 @@
 use Backend\Classes\FormWidgetBase;
 use Url;
 use VK\Client\VKApiClient;
-use \CRYDEsigN\Socializer\Models\Settings as Setting;
+use \Crydesign\Socializer\Models\Settings as Setting;
 
 class CrossPosting extends FormWidgetBase
 {
