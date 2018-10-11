@@ -108,7 +108,7 @@ class Plugin extends PluginBase
 
             }
 
-            addTest($controlLibrary);
+            // addTest($controlLibrary);
             addCrossposting($controlLibrary);
 
         });

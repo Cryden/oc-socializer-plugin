@@ -1,7 +1,7 @@
 plugin:
     name: 'crydesign.socializer::lang.plugin.name'
     description: 'crydesign.socializer::lang.plugin.description'
-    author: DmitryBykov
+    author: CRYDEsigN
     icon: oc-icon-share-alt
     homepage: 'https://github.com/Cryden/oc-socializer'
 navigation:
