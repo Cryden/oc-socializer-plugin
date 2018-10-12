@@ -4,8 +4,3 @@ plugin:
     author: CRYDEsigN
     icon: oc-icon-share-alt
     homepage: 'https://github.com/Cryden/oc-socializer'
-navigation:
-    main-menu-item:
-        label: Cross
-        url: crydesign/socializer/crosspostings
-        icon: icon-adn
